@@ -1,0 +1,77 @@
+
+TypeScript es JavaScript Escalable.
+___________________________________________________________________________________
+TypeScript extiende JavaScript al añadir tipos al lenguaje.
+TypeScript agiliza la experiencia de desarrollo al capturar errores y proveer soluciones incluso antes de ejecutar tu código.
+Cualquier navegador, cualquier sistema operativo, en donde JavaScript se ejecuta. Completamente Código Abierto.
+
+*******************************************************************************************************************************************
+*******************************************************************************************************************************************
+
+1º Vamos a hacer un repositorio git para el Proyecto TypeScript-ejemplos:
+> git init
+Inicializado repositorio Git para nuestro proyecto en /home/renegade/Proyectos/Typescript-ejemplos/.git/
+
+Y añadimos un fichero oculto '.gitignore' al proyecto para añadir lo que no queramos subir
+en este caso, la carpeta: 'node_modules'
+
+
+2º Subimos al repositorio nuestro proyecto y hacemos commit de la primera versión:
+> git add .
+> git commit -m "Proyecto Typescript-ejemplos. Inicio proyecto"
+
+Ya habíamos configurado la sección de autenticación en un proyecto previo:
+Nos falta configurar git para ejecutar el commit:
+*** Por favor cuéntame quien eres.
+Corre
+  git config --global user.email "you@example.com"
+  git config --global user.name "Tu Nombre"
+para configurar la identidad por defecto de tu cuenta.
+Omite --global para configurar tu identidad solo en este repositorio.
+
+> git config --global user.email "correo...@gmail.com"
+> git config --global user.name  "Nick..."
+
+renegade@MiPC:~/Proyectos/Typescript-ejemplos$ git commit -m "Proyecto Typescript-ejemplos. Inicio proyecto"
+[master (commit-raíz) de0bc56] Proyecto Typescript-ejemplos. Inicio proyecto
+ 8 files changed, 3254 insertions(+)
+ ... ... 
+ 
+
+3º Vamos a subir nuestro proyecto a GitHub:
+
+Necesito añadir un directorio remoto (git add remote...)
+
+> git remote add Typescript-ejemplos https://github.com/RenegadeAsturias/Typescript-ejemplos.git
+
+Para ver los remotos:
+> git remote
+TypeScript-ejemplos
+
+
+4º Ahora queremos enviar el código de nuestro repositorio a la nube:
+¡Pero ojo que el repositorio debe existir en GitHub antes de hacer el push!
+Desde GitHub me he creado un repositorio: 'Typescript-ejemplos'
+
+Y ahora para subir el código a GitHub:
+> git push <<nombre del remoto>> <<rama que queremos subir>>
+> git push origin master <- Sube el código de la rama master
+> git push origin --all  <- Sube todo el código al servidor remoto
+
+Renegade@MiPC:~/Proyectos/Typescript-ejemplos$ git push Typescript-ejemplos master
+Enumerando objetos: 15, listo.
+... ...
+To https://github.com/RenegadeAsturias/Typescript-ejemplos.git
+ * [new branch]      master -> master
+
+INFO GitHub
+===========================================================================================================
+…or create a new repository on the command line
+echo "# Typescript-ejemplos" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/RenegadeAsturias/Typescript-ejemplos.git
+git push -u origin main
+===========================================================================================================

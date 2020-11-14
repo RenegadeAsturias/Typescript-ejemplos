@@ -1,0 +1,64 @@
+
+TypeScript es JavaScript Escalable.
+___________________________________________________________________________________
+TypeScript extiende JavaScript al añadir tipos al lenguaje.
+TypeScript agiliza la experiencia de desarrollo al capturar errores y proveer soluciones incluso antes de ejecutar tu código.
+Cualquier navegador, cualquier sistema operativo, en donde JavaScript se ejecuta. Completamente Código Abierto.
+
+*******************************************************************************************************************************************
+*******************************************************************************************************************************************
+
+Para comenzar las pruebas partimos de que ya tenemos instaladas:
+renegade@MiPC:~/Proyectos$ node -v
+v10.19.0
+renegade@MiPC:~/Proyectos$ npm -v
+6.14.4
+
+Y ahora vamos a instalar TypeScript:
+
+Hay cursos que dicen que hay que instalar Typescript de manera global
+> npm i -g typescript
+
+Eso deja la instalación de Typescript en la misma carpeta de instalación de npm + node
+de tal forma que igual que podemos ejecutar npm en cualquier carpeta podemos hacer lo mismo con tsc de Typescript
+La idea de instalarlo globalmente asume que el que utiliza el proyecto debe tener instalado TypeScript
+la otra forma propuesta sería instalar TypeScript en proyectos como dependencia de cada proyecto en el que trabajamos
+fijándola en el fichero 'package.json'
+
+Ejecutamos desde línea de comando
+> npm init -> Para generar un proyecto
+
+Y se nos crea un package.json 
+Y ahora instalamos TypeScript como dependencia:
+> npm i --save-dev typescript
+
+En el fichero del proyecto generado se añade al fichero: 'package.json' la dependencia
+"devDependencies":{
+    "typescript": "[4.x.x]"
+}
+
+Y aparece la carpeta del proyecto: node_modules/.bin/ 
+donde nos añade 'tsc' que es el compilador de TypeScript
+
+***********************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

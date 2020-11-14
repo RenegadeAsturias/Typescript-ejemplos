@@ -1,0 +1,14 @@
+{
+  "name": "com.renegade.typescript.ejemplos",
+  "version": "1.0.0",
+  "description": "Ejemplos de TypeScript",
+  "main": "dist/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "RenegadeAsturias",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.0.5"
+  }
+}
