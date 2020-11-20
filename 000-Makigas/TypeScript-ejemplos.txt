@@ -40,6 +40,12 @@ En el fichero del proyecto generado se añade al fichero: 'package.json' la depe
 Y aparece la carpeta del proyecto: node_modules/.bin/ 
 donde nos añade 'tsc' que es el compilador de TypeScript
 
+Punto-1: Para compialar mi primer ejemplo desde consola:
+renegade@MiPC:~/Proyectos/Typescript-ejemplos/001-BasicTypes$ ./../node_modules/.bin/tsc BasicTypes.ts
+
+Punto-2: Puesto que tengo instalado 'Node' para ejecutar el ejemplo desde consola:
+renegade@MiPC:~/Proyectos/Typescript-ejemplos/001-BasicTypes$ node BasicTypes.js
+
 ***********************************************************************************************
 
 
