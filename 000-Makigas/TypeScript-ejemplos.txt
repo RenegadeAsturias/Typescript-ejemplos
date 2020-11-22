@@ -48,6 +48,49 @@ renegade@MiPC:~/Proyectos/Typescript-ejemplos/001-BasicTypes$ node BasicTypes.js
 
 ***********************************************************************************************
 
+También podemos utilizar script de npm, añadiendo scripts en el fichero 'package.json', ejemplo:
+
+"scripts": {
+    <<"nombre_del_script">>, <<"lo_que_queremos_que_ejecute">>
+    "build": "tsc ./001-BasicTypes/BasicTypes.ts"
+},
+
+Y ahora lo ejecutamos el script como: 'npm run build'
+> npm run build
+> com.renegade.typescript.ejemplos@1.0.0 build /home/renegade/Proyectos/Typescript-ejemplos
+> tsc ./001-BasicTypes/BasicTypes.ts
+
+***********************************************************************************************
+
+Compilar Ejemplo 5 ***************************************
+> ./../node_modules/.bin/tsc '/home/renegade/Proyectos/Typescript-ejemplos/000-Makigas/TypeScript 4.0 - 05.- Holamundo pero con tipos.ts'
+
+Y Ejecutar Ejemplo 5 *************************************
+node '/home/renegade/Proyectos/Typescript-ejemplos/000-Makigas/TypeScript 4.0 - 05.- Holamundo pero con tipos.js'
+
+***********************************************************************************************
+
+El problema con las ejecuciones de los comandos anteriores son las rutas relativas
+así que si me tengo que cambiar de directorio no me va a funcionar el doskey
+Así que redefino los buids del npm en el 'package.json' de tal forma que lo pueda ejecutar donde este:
+
+"scripts": {
+  "build5": "/home/renegade/Proyectos/Typescript-ejemplos/node_modules/.bin/tsc '/home/renegade/Proyectos/Typescript-ejemplos/000-Makigas/TypeScript 4.0 - 05.- Holamundo pero con tipos.ts'",
+  "run5": "node '/home/renegade/Proyectos/Typescript-ejemplos/000-Makigas/TypeScript 4.0 - 05.- Holamundo pero con tipos.js'"
+},
+
+Ahora para compilar y ejuctar el ejemplo 5 (TypeScript 4.0 - 05.- Holamundo pero con tipos.ts) ejecuto:
+> nmp run build5
+> nmp run run5
+
+
+
+
+
+
+
+
+
 
 
 

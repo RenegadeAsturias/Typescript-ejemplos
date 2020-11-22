@@ -13,7 +13,7 @@ let decimal: number = 6;
 let hex: number     = 0xf00d;
 let binary: number  = 0b1010;
 let octal: number   = 0o744;
-// let big: bigint     = 100n; // Ojo, que da error dependiendo de nuestro target de ECMAScript. error TS2737: BigInt literals are not available when targeting lower than ES2020.
+// let big: bigint  = 100n; // Ojo, que da error dependiendo de nuestro target de ECMAScript. error TS2737: BigInt literals are not available when targeting lower than ES2020.
 
 
 // String ****************************************************************
@@ -98,66 +98,78 @@ let unoNumber: number = tupla[1]; // Ok
 // Una adición útil al conjunto estándar de tipos de datos de JavaScript es la enumeración.
 // Como en lenguajes como C#, una enumeración es una forma de dar nombres más descriptivos a conjuntos de valores numéricos.
 
-enum Color {
+enum Color1 {
   Red,
   Green,
   Blue,
 }
-let c: Color = Color.Green;
+let c1: Color1= Color1.Green;
 
-Por defecto, las enumeraciones comienzan a numerar sus miembros a partir de 0. 
-Puede cambiar esto estableciendo manualmente el valor de uno de sus miembros. 
-Por ejemplo, podemos comenzar el ejemplo anterior en 1 en lugar de 0:
+// Por defecto, las enumeraciones comienzan a numerar sus miembros a partir de 0. 
+// Puede cambiar esto estableciendo manualmente el valor de uno de sus miembros. 
+// Por ejemplo, podemos comenzar el ejemplo anterior en 1 en lugar de 0:
 
-enum Color {
+enum Color2 {
   Red = 1,
   Green,
   Blue,
 }
-let c: Color = Color.Green;
+let c2: Color2 = Color2.Green;
 
 // O incluso establezcer manualmente todos los valores en la enumeración:
 
-enum Color {
-  Red = 1,
+enum Color3 {
+  Red   = 1,
   Green = 2,
-  Blue = 4,
+  Blue  = 4,
 }
-let c: Color = Color.Green;
-
-A handy feature of enums is that you can also go from a numeric value to the name of that value in the enum. For example, if we had the value 2 but weren’t sure what that mapped to in the Color enum above, we could look up the corresponding name:
+let c3: Color3 = Color3.Green;
 
 // Una característica útil de las enumeraciones es que también puede pasar de un valor numérico al nombre de ese valor en la enumeración. 
 // Por ejemplo, si tuviéramos el valor 2 pero no estuviéramos seguros de a qué se asignó en la enumeración de Color anterior, 
 // podríamos buscar el nombre correspondiente:
 
-enum Color {
+enum Color4 {
   Red = 1,
   Green,
   Blue,
 }
-let colorName: string = Color[2];
-
+let colorName: string = Color4[2];
 console.log(colorName); // Displays 'Green'
 
 
 // Unknown ***************************************************************
 // ***********************************************************************
-
-/** 
-
-
-We may need to describe the type of variables that we do not know when we are writing an application. 
-These values may come from dynamic content – e.g. from the user – or we may want to intentionally accept all values in our API. 
-In these cases, we want to provide a type that tells the compiler and future readers that this variable could be anything, 
-so we give it the unknown type.
+// Es posible que necesitemos describir el tipo de variables que no conocemos cuando escribimos una aplicación.
+// Estos valores pueden provenir de contenido dinámico, por ejemplo del usuario, 
+// o podemos querer aceptar intencionalmente todos los valores en nuestra API.
+// En estos casos, queremos proporcionar un tipo que le diga al compilador 
+// y a los futuros lectores que esta variable podría ser cualquier cosa, así que le damos el tipo desconocido.
 
 let notSure: unknown = 4;
 notSure = "maybe a string instead";
-
 // OK, definitely a boolean
 notSure = false;
 
+// Si tiene una variable con un tipo unknown, puede limitarla a algo más específico haciendo comprobaciones 'typeof', 
+// comprobaciones 'checks' o más avanzadas 'type guards' que se discutirán en un capítulo posterior:
 
-*/
+declare const maybe: unknown;
 
+// 'maybe' could be a string, object, boolean, undefined, or other types
+// const aNumber: number = maybe; -> Error: - El tipo 'unknown' no es asignable al tipo 'number'.
+
+if (maybe === true) {
+  const aBoolean: boolean = maybe; // TypeScript knows that maybe is a boolean now
+  // So, it cannot be a string
+  // const aString: string = maybe; -> Error: Type 'boolean' is not assignable to type 'string'.
+}
+
+if (typeof maybe === "string") { // TypeScript knows that maybe is a string
+  const aString: string = maybe;
+  // So, it cannot be a boolean
+  // const aBoolean: boolean = maybe; -> Error: Type 'string' is not assignable to type 'boolean'.
+}
+
+// Any *******************************************************************
+// ***********************************************************************

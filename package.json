@@ -4,7 +4,9 @@
   "description": "Ejemplos de TypeScript",
   "main": "dist/index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc ./001-BasicTypes/BasicTypes.ts",
+    "build5": "/home/renegade/Proyectos/Typescript-ejemplos/node_modules/.bin/tsc '/home/renegade/Proyectos/Typescript-ejemplos/000-Makigas/TypeScript 4.0 - 05.- Holamundo pero con tipos.ts'",
+    "run5": "node '/home/renegade/Proyectos/Typescript-ejemplos/000-Makigas/TypeScript 4.0 - 05.- Holamundo pero con tipos.js'",
   },
   "author": "RenegadeAsturias",
   "license": "ISC",
